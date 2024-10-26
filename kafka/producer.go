@@ -17,12 +17,7 @@ func SendMessage(transaction models.Transaction) {
 
 	defer producer.Close()
 
-	p2pServerMessage := models.P2PServerMessage{
-		PeerAddress: "main_p2p_server",
-		Transaction: transaction,
-	}
-
-    messageBytes, err := json.Marshal(p2pServerMessage)
+    messageBytes, err := json.Marshal(transaction)
     if err != nil {
         log.Fatalf("Error marshaling struct: %v", err)
     }
