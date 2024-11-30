@@ -19,7 +19,7 @@ func SendMessage(transaction models.Transaction) {
 
     messageBytes, err := json.Marshal(transaction)
     if err != nil {
-        log.Fatalf("Error marshaling struct: %v", err)
+        log.Fatalf("Error marshaling struc: %v", err)
     }
 
 	topic := "send-thepapucoin-topic"
